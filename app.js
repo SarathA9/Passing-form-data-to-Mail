@@ -14,9 +14,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 // Serve HTML form
-app.get('/', (req, res) => {
-  res.sendFile(__dirname + '/index.html');
-});
+app.use(express.static('public'));
+
 
 // Handle form submission
 app.post('/submit', (req, res) => {
